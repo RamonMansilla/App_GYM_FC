@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">App_GymFC</string>
+    <string name="login">ACCESO:</string>
+    <string name="pass_user">Contraseña</string>
+    <string name="access">Acceder</string>
+    <string name="mail_user">Correo</string>
+    <string name="register_user">Registro de Usuario:</string>
+    <string name="register_user_name">Nombre</string>
+    <string name="register_user_last_name">Apellido</string>
+    <string name="register_user_email">Correo</string>
+    <string name="register_user_date_of_birth">Fecha de Nacimiento</string>
+    <string name="register_user_height">Estatura</string>
+    <string name="register_user_button">Registrar Usuario</string>
+    <string name="register_user_pass">Contraseña</string>
+    <string name="register_evaluation">Registro de Evaluación Física:</string>
+    <string name="register_evaluation_date">Fecha</string>
+    <string name="register_evaluation_weight">Peso</string>
+    <string name="register_evaluation_imc">IMC</string>
+    <string name="register_evaluation_button">Registrar Evaluación</string>
+    <string name="get_evaluation">Búsqueda de Evaluaciones Físicas:</string>
+    <string name="get_evaluation_text_1">Seleccione Rango de Fecha</string>
+    <string name="get_evaluation_text_2">Evaluaciones encontradas:</string>
+    <string name="get_evaluation_date_start">Fecha Desde</string>
+    <string name="get_evaluation_date_end">Fecha Hasta</string>
+    <string name="get_evaluation_date_weight">Peso</string>
+    <string name="get_evaluation_Imc">IMC</string>
+    <string name="get_evaluation_button">Filtrar</string>
+    <string name="main_button_1">Nueva Evaluacion</string>
+    <string name="main_button_2">Obtener Evaluaciones</string>
+    <string name="main_button_3">Cerrar Sesión</string>
+    <string name="login_activity_register_user">Registrarse</string>
+    <string name="details_evaluation_text_view_1">Evaluaciones encontradas:</string>
+    <string name="details_evaluation_text_view_2">Fecha de la medición:</string>
+    <string name="details_evaluation_text_view_3">Peso:</string>
+    <string name="details_evaluation_text_view_4">IMC:</string>
+    <string name="main_button_text_view">Menú Principal:</string>
+    <string name="id">id</string>
+    <string name="back">Volver</string>
+
+
+</resources>

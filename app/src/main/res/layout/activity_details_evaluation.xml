@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailsEvaluationActivity">
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="32dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewActivityGetEvaluation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/details_evaluation_text_view_1"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewDetailsEvaluationActivityDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/details_evaluation_text_view_2"
+                android:textAlignment="textStart"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewDetailsEvaluationActivityWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/details_evaluation_text_view_3"
+                android:textAlignment="textStart"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/textViewDetailsEvaluationsActivityImc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="40dp"
+                android:text="@string/details_evaluation_text_view_4"
+                android:textAlignment="textStart"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewDetailsEvaluationActivityDate2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/details_evaluation_text_view_2"
+                android:textAlignment="textStart"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewDetailsEvaluationActivityWeight2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/details_evaluation_text_view_3"
+                android:textAlignment="textStart"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/textViewDetailsEvaluationsActivityImc2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="300dp"
+                android:text="@string/details_evaluation_text_view_4"
+                android:textAlignment="textStart"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/buttonDetailsActivityEvaluationsActivityBack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="volver al menú principal" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

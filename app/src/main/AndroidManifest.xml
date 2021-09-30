@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App_GymFC">
         <activity
-            android:name=".DetailsEvaluationActivity"
-            android:exported="true" />
-        <activity
             android:name=".GetEvaluationsActivity"
             android:exported="true" />
         <activity
@@ -26,7 +23,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

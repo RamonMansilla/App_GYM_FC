@@ -1,17 +1,18 @@
 package com.example.app_gymfc.models;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Evaluation {
+public class Evaluation implements Serializable {
     private long id;
-    private String date;
-    private String weight;
-    private String imc;
+    private Date date;
+    private double weight;
+    private int imc;
 
-    public Evaluation(String date, String weight, String imc) {
+    public Evaluation(long id, Date date, double weight) {
+        this.id = id;
         this.date = date;
         this.weight = weight;
-        this.imc = imc;
     }
 
     public long getId() {
@@ -22,15 +23,19 @@ public class Evaluation {
         this.id = id;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public String getWeight() {
+    public void setDate() {
+        this.date = date;
+    }
+
+    public double getWeight() {
         return weight;
     }
 
-    public String getImc() {
+    public int getImc() {
         return imc;
     }
 }

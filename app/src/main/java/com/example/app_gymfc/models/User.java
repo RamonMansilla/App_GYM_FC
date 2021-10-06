@@ -11,13 +11,12 @@ public class User {
     private Date dateBirth;
     private String height;
 
-    public User(String firstName, String lastName, String email, String password, Date dateBirth, String height) {
+    public User(String firstName, String lastName, String email, Date dateBirth, String height) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.dateBirth = dateBirth;
         this.height = height;
-        this.password = password;
     }
 
     public long getId() {

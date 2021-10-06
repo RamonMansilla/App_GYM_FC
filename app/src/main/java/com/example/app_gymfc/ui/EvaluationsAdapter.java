@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.app_gymfc.R;
 import com.example.app_gymfc.models.Evaluation;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class EvaluationsAdapter extends BaseAdapter {
@@ -49,10 +50,13 @@ public class EvaluationsAdapter extends BaseAdapter {
         TextView tvWeight = view.findViewById(R.id.item_evaluation_tv_weight);
         TextView tvImc = view.findViewById(R.id.item_evaluation_tv_imc);
 
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
         tvId.setText(Long.toString(evaluation.getId()));
-        tvDate.setText(evaluation.getDate());
-        tvWeight.setText(evaluation.getWeight());
-        tvImc.setText(evaluation.getImc());
+        tvDate.setText(dateFormat.format(evaluation.getDate()));
+        tvWeight.setText(Double.toString(evaluation.getWeight()));
+        tvImc.setText(Double.toString(evaluation.getWeight() / (1.70 * 1.70)));
         return view;
     }
 }

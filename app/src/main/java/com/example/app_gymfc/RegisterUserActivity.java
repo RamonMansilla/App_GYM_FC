@@ -53,10 +53,12 @@ public class RegisterUserActivity extends AppCompatActivity {
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-            User user = new User(firstName, lastName, emailUser, passUser, birthdayDate, height);
+            User user = new User(firstName, lastName, emailUser, birthdayDate, height);
             user.setPassword(passUser);
+
             AuthController controller = new AuthController(view.getContext());
             controller.registerUser(user);
+
             Toast.makeText(view.getContext(), "Usuario: "+emailUser+" registrado", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(view.getContext(), LoginActivity.class);
             startActivity(i);

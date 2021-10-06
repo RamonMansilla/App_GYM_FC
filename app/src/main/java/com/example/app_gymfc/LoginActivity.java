@@ -16,11 +16,16 @@ public class LoginActivity extends AppCompatActivity {
 
     private Button btnLogin, btnRegister;
     private TextInputLayout tilEmail, tilPassword;
+    private AuthController authController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        authController = new AuthController(this);
+        authController.checkUserSession();
+
         btnLogin = findViewById(R.id.buttonActivityLogin);
         btnRegister = findViewById(R.id.buttonActivityRegister);
         tilEmail = findViewById(R.id.TextInputUserActivityLogin);

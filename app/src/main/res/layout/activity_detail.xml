@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterUserActivity">
+    tools:context=".RegisterEvaluationActivity">
 
     <ScrollView
         android:layout_width="0dp"
@@ -25,62 +25,16 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textViewActivityRegisterUser"
+                android:id="@+id/activity_detail_tv_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/register_user"
+                android:text="@string/detail_evaluation"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/TextInputActivityRegisterEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:layout_marginBottom="16dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/register_user_email"
-                    android:inputType="textEmailAddress"
-                    android:textColor="#616161"
-                    tools:ignore="TextContrastCheck" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/TextInputActivityRegisterName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/register_user_name"
-                    android:textColor="#616161"
-                    tools:ignore="TextContrastCheck" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/TextInputActivityRegisterUserLastName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/register_user_last_name"
-                    android:textColor="#616161"
-                    tools:ignore="TextContrastCheck" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/TextInputActivityRegisterDateBirth"
+                android:id="@+id/TextInputActivityRegisterEvaluationDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -90,50 +44,54 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:focusable="false"
-                    android:hint="@string/register_user_date_of_birth"
+                    android:hint="@string/details_evaluation_text_view_2"
                     android:textColor="#616161"
                     tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
+
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/TextInputActivityRegisterHeight"
+                android:id="@+id/TextInputActivityRegisterEvaluationWeight"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/register_user_height"
-                    android:inputType="numberDecimal"
+                    android:hint="@string/register_evaluation_weight"
                     android:textColor="#616161"
                     tools:ignore="TextContrastCheck" />
-
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/TextInputActivityRegisterPass"
+                android:id="@+id/TextInputActivityRegisterEvaluationImc"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="60dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/register_user_pass"
-                    android:inputType="textPassword"
+                    android:hint="@string/register_evaluation_imc"
                     android:textColor="#616161"
                     tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/buttonActivityRegisterUser"
+                android:id="@+id/buttonActivityDeleteUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/register_user_button" />
+                android:text="Eliminar Evaluación" />
 
+            <Button
+                android:id="@+id/buttonActivityBack"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/back" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

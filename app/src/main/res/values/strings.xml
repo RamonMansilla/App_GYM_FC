@@ -36,6 +36,7 @@
     <string name="main_button_text_view">Menú Principal:</string>
     <string name="id">id</string>
     <string name="back">Volver</string>
+    <string name="detail_evaluation">Detalles de la evaluación</string>
 
 
 </resources>

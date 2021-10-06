@@ -43,7 +43,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/register_user_date_of_birth"
+                    android:focusable="false"
+                    android:hint="@string/details_evaluation_text_view_2"
                     android:textColor="#616161"
                     tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>

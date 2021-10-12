@@ -8,8 +8,12 @@ import android.widget.Toast;
 
 import com.example.app_gymfc.MainActivity;
 import com.example.app_gymfc.LoginActivity;
+import com.example.app_gymfc.dao.UserDao;
 import com.example.app_gymfc.lib.BCrypt;
+import com.example.app_gymfc.lib.GymFcDataBase;
 import com.example.app_gymfc.models.User;
+import com.example.app_gymfc.models.UserEntity;
+import com.example.app_gymfc.models.UserMapper;
 
 import java.util.Date;
 
@@ -21,6 +25,7 @@ public class AuthController {
     private final String KEY_LAST_NAME = "userLastName";
     private final String KEY_HEIGHT = "userHeight";
 
+    private UserDao userDao;
 
     private Context ctx;
     private SharedPreferences preferences;
@@ -30,6 +35,9 @@ public class AuthController {
         int PRIVATE_MODE = 0;
         String PREF_NAME = "AppGymPref";
         this.preferences = ctx.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
+        this.userDao = GymFcDataBase.getInstance(ctx).userDao();
+
+
     }
 
     private void setUserSession(User user) {
@@ -65,6 +73,8 @@ public class AuthController {
     public void registerUser(User user) {
         String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
         user.setPassword(hashedPassword);
+        UserEntity userEntity = new UserMapper(user).toEntity();
+        userDao.insert(userEntity);
 
         Toast.makeText(ctx, String.format("Usuario %s registrado!", user.getEmail()), Toast.LENGTH_SHORT).show();
         Intent i = new Intent(ctx, LoginActivity.class);
@@ -72,10 +82,8 @@ public class AuthController {
     }
 
     public void loginUser(String email, String password) {
-        User user = new User("Ramón", "Mansilla", "ramon.mansilla.drive@gmail.com", new Date(), "75");
-        user.setPassword("$2a$10$YtWAhrL.q45dscD8PUt/zOswiimOai0EsHTsfBm5S6rfVC1sILGQC");
-        user.setId(1);
-
+        UserEntity userEntity = userDao.findByEmail(email);
+        User user = new UserMapper(userEntity).toBase();
 
         if (BCrypt.checkpw(password, user.getPassword())) {
             setUserSession(user);

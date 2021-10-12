@@ -21,6 +21,7 @@ public class RegisterUserActivity extends AppCompatActivity {
     private final String DATE_PATTERN = "yyyy-MM-dd";
     private Button btnReg;
     private TextInputLayout tilFirstName, tilLastName, tilHeight, tilEmail, tilPassword, tilBirthDay;
+    private Integer flag = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,21 +49,50 @@ public class RegisterUserActivity extends AppCompatActivity {
             String passUser = tilPassword.getEditText().getText().toString();
             SimpleDateFormat dateFormatter = new SimpleDateFormat(DATE_PATTERN);
             Date birthdayDate = null;
+
+            boolean firstNameValid = !firstName.isEmpty();
+            boolean lastNameValid = !lastName.isEmpty();
+            boolean birthdayValid = !birthday.isEmpty();
+            boolean heightValid = !height.isEmpty();
+            boolean emailUserValid = !emailUser.isEmpty();
+            boolean passUserValid = !passUser.isEmpty();
+
+            if (!firstNameValid) {
+                tilFirstName.setError("El campo es requerido");
+                flag = 1;
+            } else if (!lastNameValid) {
+                tilLastName.setError("El campo es requerido");
+                flag = 1;
+            } else if (!birthdayValid) {
+                tilBirthDay.setError("El campo es requerido");
+                flag = 1;
+            } else if (!heightValid) {
+                tilHeight.setError("El campo es requerido");
+                flag = 1;
+            } else if (!emailUserValid) {
+                tilEmail.setError("El campo es requerido");
+                flag = 1;
+            } else if (!passUserValid) {
+                tilPassword.setError("El campo es requerido");
+                flag = 1;
+            } else {
+                flag = 0;
+            }
             try {
                 birthdayDate = dateFormatter.parse(birthday);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-            User user = new User(firstName, lastName, emailUser, birthdayDate, height);
-            user.setPassword(passUser);
-
-            AuthController controller = new AuthController(view.getContext());
-            controller.registerUser(user);
-
-            Toast.makeText(view.getContext(), "Usuario: "+emailUser+" registrado", Toast.LENGTH_SHORT).show();
-            Intent i = new Intent(view.getContext(), LoginActivity.class);
-            startActivity(i);
-            finish();
+            if (flag == 0) {
+                User user = new User(firstName, lastName, emailUser, birthdayDate, height);
+                user.setPassword(passUser);
+                AuthController controller = new AuthController(view.getContext());
+                controller.registerUser(user);
+                Toast.makeText(view.getContext(), "Usuario: " + emailUser + " registrado", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(view.getContext(), LoginActivity.class);
+                startActivity(i);
+                finish();
+            }
         });
     }
 }

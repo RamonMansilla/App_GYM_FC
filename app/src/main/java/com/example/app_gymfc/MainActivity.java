@@ -65,12 +65,10 @@ public class MainActivity extends AppCompatActivity {
         lvAllEvaluations.setOnItemClickListener((adapterView, view, index, list) -> {
             Evaluation evaluation = evaluationList.get(index);
             Intent i = new Intent(view.getContext(), DetailActivity.class);
-            i.putExtra("evaluation",evaluation);
+            i.putExtra("evaluation", evaluation);
             view.getContext().startActivity(i);
         });
-//        lvAllEvaluations.setOnClickListener(((adapterView, view, i, l) -> {
-//
-//        }));
+
 
         btnGet.setOnClickListener(view -> {
             Intent i = new Intent(view.getContext(), RegisterEvaluationActivity.class);

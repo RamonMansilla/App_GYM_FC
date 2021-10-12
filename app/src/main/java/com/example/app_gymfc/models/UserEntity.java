@@ -1,20 +1,44 @@
 package com.example.app_gymfc.models;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Index;
+import androidx.room.PrimaryKey;
+
 import java.util.Date;
 
-public class User implements IUser {
+@Entity(tableName = "users", indices = {@Index(value = "email", unique = true)})
+
+
+public class UserEntity implements IUser {
+    @PrimaryKey(autoGenerate = true)
     private long id;
+
+    @ColumnInfo(name = "firstName")
     private String firstName;
+
+    @ColumnInfo(name = "lastName")
     private String lastName;
+
+    @ColumnInfo(name = "email")
     private String email;
+
+    @ColumnInfo(name = "password")
     private String password;
+
+    @ColumnInfo(name = "dateBirth")
     private Date dateBirth;
+
+    @ColumnInfo(name = "height")
     private String height;
 
-    public User(String firstName, String lastName, String email, Date dateBirth, String height) {
+
+    public UserEntity(long id, String firstName, String lastName, String email, String password, Date dateBirth, String height) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.password = password;
         this.dateBirth = dateBirth;
         this.height = height;
     }
@@ -22,11 +46,6 @@ public class User implements IUser {
     public long getId() {
         return id;
     }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
 
     public String getFirstName() {
         return firstName;
@@ -51,9 +70,4 @@ public class User implements IUser {
     public String getHeight() {
         return height;
     }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
 }

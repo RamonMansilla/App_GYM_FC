@@ -45,15 +45,12 @@ public class EvaluationsAdapter extends BaseAdapter {
 
         Evaluation evaluation = evaluationList.get(i);
 
-        TextView tvId = view.findViewById(R.id.item_evaluation_tv_id);
+//        TextView tvId = view.findViewById(R.id.item_evaluation_tv_id);
         TextView tvDate = view.findViewById(R.id.item_evaluation_tv_date);
         TextView tvWeight = view.findViewById(R.id.item_evaluation_tv_weight);
         TextView tvImc = view.findViewById(R.id.item_evaluation_tv_imc);
-
-
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-
-        tvId.setText(Long.toString(evaluation.getId()));
+//        tvId.setText(Long.toString(evaluation.getId()));
         tvDate.setText(dateFormat.format(evaluation.getDate()));
         tvWeight.setText(Double.toString(evaluation.getWeight()));
         tvImc.setText(Double.toString(evaluation.getWeight() / (1.70 * 1.70)));

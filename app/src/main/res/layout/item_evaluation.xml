@@ -11,12 +11,12 @@
         android:layout_weight="1"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/item_evaluation_tv_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/id"
-            android:textStyle="italic" />
+<!--        <TextView-->
+<!--            android:id="@+id/item_evaluation_tv_id"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/id"-->
+<!--            android:textStyle="italic" />-->
 
         <TextView
             android:id="@+id/item_evaluation_tv_date"

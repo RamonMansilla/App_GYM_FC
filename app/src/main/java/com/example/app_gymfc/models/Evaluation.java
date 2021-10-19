@@ -3,18 +3,19 @@ package com.example.app_gymfc.models;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Evaluation implements Serializable {
+public class Evaluation implements Serializable, IEvaluation {
     private long id;
     private Date date;
     private double weight;
-    private int imc;
+    private long userId;
 
-    public Evaluation(long id, Date date, double weight) {
-        this.id = id;
+    public Evaluation(Date date, double weight, long userId) {
         this.date = date;
         this.weight = weight;
+        this.userId = userId;
     }
 
+    @Override
     public long getId() {
         return id;
     }
@@ -23,19 +24,18 @@ public class Evaluation implements Serializable {
         this.id = id;
     }
 
+    @Override
     public Date getDate() {
         return date;
     }
 
-    public void setDate() {
-        this.date = date;
-    }
-
+    @Override
     public double getWeight() {
         return weight;
     }
 
-    public int getImc() {
-        return imc;
+    @Override
+    public long getUserId() {
+        return userId;
     }
 }

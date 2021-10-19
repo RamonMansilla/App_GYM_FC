@@ -89,9 +89,6 @@ public class RegisterUserActivity extends AppCompatActivity {
                 AuthController controller = new AuthController(view.getContext());
                 controller.registerUser(user);
                 Toast.makeText(view.getContext(), "Usuario: " + emailUser + " registrado", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(view.getContext(), LoginActivity.class);
-                startActivity(i);
-                finish();
             }
         });
     }

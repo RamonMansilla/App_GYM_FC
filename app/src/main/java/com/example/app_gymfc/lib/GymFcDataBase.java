@@ -9,10 +9,12 @@ import androidx.room.TypeConverters;
 
 
 import com.example.app_gymfc.Utils.Converters;
+import com.example.app_gymfc.dao.EvaluationDao;
 import com.example.app_gymfc.dao.UserDao;
+import com.example.app_gymfc.models.EvaluationEntity;
 import com.example.app_gymfc.models.UserEntity;
 
-@Database(entities = {UserEntity.class}, version = 1)
+@Database(entities = {UserEntity.class, EvaluationEntity.class}, version = 3)
 @TypeConverters({Converters.class})
 
 public abstract class GymFcDataBase extends RoomDatabase {
@@ -30,4 +32,6 @@ public abstract class GymFcDataBase extends RoomDatabase {
     }
 
     public abstract UserDao userDao();
+
+    public abstract EvaluationDao evaluationDao();
 }

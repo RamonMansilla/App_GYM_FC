@@ -8,6 +8,7 @@ public class Evaluation implements Serializable, IEvaluation {
     private Date date;
     private double weight;
     private long userId;
+    private double imc;
 
     public Evaluation(Date date, double weight, long userId) {
         this.date = date;
@@ -37,5 +38,11 @@ public class Evaluation implements Serializable, IEvaluation {
     @Override
     public long getUserId() {
         return userId;
+    }
+
+    public double getImc(double weight, double Height) {
+        double imc = 0;
+        imc = weight / Height * Height;
+        return imc;
     }
 }

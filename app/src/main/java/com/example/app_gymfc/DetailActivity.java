@@ -18,6 +18,8 @@ public class DetailActivity extends AppCompatActivity {
     private TextView tvId, tvEvDate, tvEvWeight, tvEvImc;
     private Button btnDel, btnBack;
     private AuthController authController;
+    private double weight, Height;
+    private String Height2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +30,13 @@ public class DetailActivity extends AppCompatActivity {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         tvId = findViewById(R.id.activity_detail_tv_id);
         User user = authController.getUserSession();
-        tvId.setText(String.format("Evaluacion de %s", user.getFirstName()));;
+        weight = evaluation.getWeight();
+        Height2 = user.getHeight();
+        Height = Double.parseDouble(Height2); // Make use of autoboxing.  It's also easier to read.
+
+        tvId.setText(String.format("Evaluacion de %s", user.getFirstName()));
+
+
         tvEvDate = findViewById(R.id.TextInputActivityRegisterEvaluationDate);
         tvEvWeight = findViewById(R.id.TextViewWeight);
         tvEvImc = findViewById(R.id.TextViewImc);
@@ -36,7 +44,7 @@ public class DetailActivity extends AppCompatActivity {
         btnBack = findViewById(R.id.buttonActivityBack);
         tvEvDate.setText(dateFormat.format(evaluation.getDate()));
         tvEvWeight.setText(Double.toString(evaluation.getWeight()));
-        tvEvImc.setText(Double.toString(evaluation.getWeight() / (1.70 * 1.70)));
+        tvEvImc.setText(Double.toString(evaluation.getImc(weight,Height)));
 
         btnDel.setOnClickListener(view -> {
             EvaluationController controller = new EvaluationController(view.getContext());

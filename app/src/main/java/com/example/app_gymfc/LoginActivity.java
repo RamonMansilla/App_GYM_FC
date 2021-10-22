@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         authController = new AuthController(this);
-        authController.checkUserSession();
+
 
         btnLogin = findViewById(R.id.buttonActivityLogin);
         btnRegister = findViewById(R.id.buttonActivityRegister);

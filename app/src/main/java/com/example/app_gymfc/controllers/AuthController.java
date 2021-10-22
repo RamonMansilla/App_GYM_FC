@@ -17,6 +17,8 @@ import com.example.app_gymfc.models.UserMapper;
 
 import java.util.Date;
 
+import android.os.Handler;
+
 public class AuthController {
 
     private final String KEY_USER_ID = "userId";
@@ -26,7 +28,6 @@ public class AuthController {
     private final String KEY_HEIGHT = "userHeight";
 
     private UserDao userDao;
-
     private Context ctx;
     private SharedPreferences preferences;
 
@@ -51,12 +52,27 @@ public class AuthController {
     }
 
     public void checkUserSession() {
+//        long id = preferences.getLong(KEY_USER_ID, 0);
+//        if (id != 0) {
+//            Intent i = new Intent(ctx, MainActivity.class);
+//            ctx.startActivity(i);
+//            ((Activity) ctx).finish();
+//        }
         long id = preferences.getLong(KEY_USER_ID, 0);
-        if (id != 0) {
-            Intent i = new Intent(ctx, MainActivity.class);
-            ctx.startActivity(i);
+
+        final int TIMEOUT = 3000;
+
+        new Handler().postDelayed(() -> {
+            if (id != 0) {
+                Toast.makeText(ctx, "Bienvenido denuevo", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(ctx, MainActivity.class);
+                ctx.startActivity(i);
+            } else {
+                Intent i = new Intent(ctx, LoginActivity.class);
+                ctx.startActivity(i);
+            }
             ((Activity) ctx).finish();
-        }
+        }, TIMEOUT);
     }
 
     public User getUserSession() {
